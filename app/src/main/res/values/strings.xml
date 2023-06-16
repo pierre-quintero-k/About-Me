@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">About Me</string>
+    <string name="subject">Mensaje desde la App</string>
+    <string name="title">Soy Pierre Quintero</string>
+    <string name="exp">AÑOS DE EXPERIENCIA:  2 años</string>
+    <string name="photo">mi foto</string>
+    <string name="button">mi boton</string>
+    <string name="title2">ABOUT DON PIERRE</string>
+    <string name="linkedin_btn">LINKEDIN</string>
+    <string name="whatsapp_btn">WHATSAPP</string>
+    <string name="message">Mensaje</string>
+    <string name="contact">CONTACTARME</string>
 </resources>

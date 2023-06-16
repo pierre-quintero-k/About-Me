@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.aboutme.databinding.ActivityMain2Binding;
-import com.example.aboutme.databinding.ActivityMainBinding;
 
 public class MainActivity2 extends AppCompatActivity {
     private ActivityMain2Binding binding;
@@ -25,7 +24,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         Button link_btn = binding.linkedinBtn;
         Button what_btn = binding.whatBtn;
-        EditText message_text = binding.messageEmail;
+        EditText message_text = binding.messageText;
         Button email_btn = binding.emailBtn;
 
         email_btn.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("message/rfc822");
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "pierrequintero@gmail.com" });
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Mensaje desde la App");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "@string/subject");
                 intent.putExtra(Intent.EXTRA_TEXT, message);
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
@@ -59,7 +58,6 @@ public class MainActivity2 extends AppCompatActivity {
         link_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Abrir el perfil de LinkedIn en la aplicación oficial de LinkedIn
                 String linkedinProfileId = "pierre-quintero";
                 String linkedinAppUrl = "linkedin://profile/" + linkedinProfileId;
 
@@ -68,7 +66,6 @@ public class MainActivity2 extends AppCompatActivity {
                     intent.setPackage("com.linkedin.android");
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
-                    // La aplicación de LinkedIn no está instalada, abrir en el navegador
                     String linkedinWebUrl = "https://www.linkedin.com/in/pierre-quintero";
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkedinWebUrl));
                     startActivity(intent);
